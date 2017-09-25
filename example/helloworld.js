@@ -17,4 +17,4 @@ function countUpFrom10 () {
     document.getElementById("clicks").innerHTML = newCount;
 }
 
-document.write("I love javascript.");
+document.write("I love javascript. It's the best");
