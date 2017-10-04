@@ -44,8 +44,6 @@ var player2 = {
 
 //Pokemon Object
 
-//functions or methods
-
 
 //function to calculate the players score
 function calculateScore(numberOfWins){
