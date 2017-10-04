@@ -6,7 +6,7 @@ ul {
     background-color: #333;
 }
 
-li {
+li  {
     float: left;
 }
 
@@ -21,4 +21,34 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+}
+p #battleTitle{
+    display:block;
+    margin:0 auto;
+}
+
+body {
+    background-color: gold;
+}
+.gameContent{
+    background-image: url('./img/pokemonGameImages/battleArena.png');
+    height:500px;
+}
+
+.battleTitle {
+    text-align: center;
+}
+
+#player1 {
+    float: left;
+    width:40%;
+}
+#vs{
+    float: left;
+    width:20%;
+    padding-top: 40px;
+}
+#player2 {
+    float: right;
+    width:40%;
 }

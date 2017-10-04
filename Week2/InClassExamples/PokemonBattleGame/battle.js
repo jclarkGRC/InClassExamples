@@ -9,24 +9,11 @@ The goal is to choose the best pokemon to win!
 //fields
 //*******
 
-//array of players in the game
-var players = [];
-
+var players = []; //array of players in the game
+var brTag = "<br>";
 
 //objects
 //*******
-
-//Player object
-// var player1 = {
-//     name: "",
-//     pokemon: {
-//         name: "",
-//         attackPower: "",
-//         healthPoints: "",
-//     },
-//     numberOfWins: 0,
-//     winner: false
-// };
 
 //Create objects using constructor functions to be able to create multiple objects
 //Of the same structure. We will have multiple players and pokemon, so this is good.
@@ -50,21 +37,25 @@ function Pokemon(name) {
         case 'Pikachu':
             this.attackPower = 50;
             this.healthPoints = 50;
+            this.imageURL = "./img/pokemonGameImages/pikachu.png";
             break;
 
         case 'Bulbasaur':
             this.attackPower = 40;
             this.healthPoints = 50;
+            this.imageURL = "./img/pokemonGameImages/bulbasaur.png";
             break;
 
         case 'Squirtle':
             this.attackPower = 30;
             this.healthPoints = 50;
+            this.imageURL = "./img/pokemonGameImages/squirtle.png";
             break;
 
         case 'Charmander':
             this.attackPower = 20;
             this.healthPoints = 50;
+            this.imageURL = "./img/pokemonGameImages/charmander.png";
             break;
     }
 }
@@ -81,12 +72,7 @@ function startBattle() {
     var playerTwo = new Player();
 
     //create players based on how many players were chosen to play
-
-
-    //create player objects
-    //*********************
-
-    console.log(typeof playerCount);
+    //************************************************************
 
     //create player one & two
     if (playerCount === 1) {
@@ -102,7 +88,7 @@ function startBattle() {
         players.push(computerPlayer);
 
         //log the players created for debugging
-        console.log(players)
+        //console.log(players)
     }
     if (playerCount === 2) {
         //create both players
@@ -114,8 +100,60 @@ function startBattle() {
         players.push(playerTwo);
 
         //log the players array
-        console.log(players);
+        //console.log(players);
     }
+
+    //call a function to update elements of the document with our new
+    //new information from the user
+    displayPlayers(players)
+
+}
+
+//displayPlayerOne
+function displayPlayerOne () {
+    //player fields
+    var playerOne = players[0];
+
+    //Display player one's name
+    document.getElementById("player1").innerHTML +=
+        playerOne.playerName +
+        brTag +
+        playerOne.pokemon.name +
+        brTag +
+        "<img src=" + playerOne.pokemon.imageURL + ">";
+}
+
+//displayPlayerTwo
+function displayPlayerTwo () {
+    var playerTwo = players[1];
+
+    //Display player two
+    document.getElementById("player2").innerHTML +=
+        playerTwo.playerName +
+        brTag +
+        playerTwo.pokemon.name +
+        brTag +
+        "<img src=" + playerTwo.pokemon.imageURL + ">";
+}
+
+//display players to document
+function displayPlayers(players) {
+    console.log("The players array is: ");
+    console.log(players);
+
+    //Hide the start game button
+    document.getElementById("startGameButton").style.visibility="hidden";
+
+    //call function that updates the document with player one's information
+    displayPlayerOne();
+
+    //Display the versus text
+    document.getElementById("versus").innerHTML = "versus";
+
+    //call similar function for player two... we could write one function that handles both players
+    //if we passed each player as a parameter
+    displayPlayerTwo();
+
 }
 
 //function to create player object based on user input

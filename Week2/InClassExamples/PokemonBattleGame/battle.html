@@ -1,25 +1,42 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Pokemon Battle Game</title>
-		<link rel="stylesheet" type="text/css" href="pokemonStyles.css">
-	</head>
+<head>
+    <title>Pokemon Battle Game</title>
+    <link rel="stylesheet" type="text/css" href="pokemonStyles.css">
+</head>
 
-	<body>
-		<!-- Navigation bar -->
-		<ul>
-		  <li><a href="homePage.html">Home</a></li>
-		  <li><a href="">Game</a></li>
-		  <li><a href="">Scores</a></li>
-		</ul>
+<body>
+<!-- Navigation bar -->
+<ul>
+    <li><a href="homePage.html">Home</a></li>
+    <li><a href="">Game</a></li>
+    <li><a href="">Scores</a></li>
+</ul>
 
-		<p>Who is ready for pokemon battle?!?!?!</p>
+<div>
+    <div class = "battleTitle">
+        <h1>Let's battle!</h1>
+        <!--button to ask users for names and pokemon choices-->
+        <div id="startGameButton"><input type="button" value="Start Game!" onClick="startBattle()"/></div>
+        <br>
+    </div>
 
-		<input type="button" value="Start Game!" onClick="startBattle()"/>
+    <div class="gameContent">
+        <!--player one information-->
+        <div id="player1">
+            <u><h2>Player One:</h2></u>
+        </div>
+
+        <!--this will show during battle-->
+        <div id="vs"> <h3 id="versus"></h3></div>
 
 
-
-		<script src="battle.js"></script>
-
-	</body>
+        <!--player two information-->
+        <div id="player2">
+            <u><h2>Player Two:</h2></u>
+        </div>
+    </div>
+</div>
+<script src="battle.js"></script>
+</body>
 </html>
