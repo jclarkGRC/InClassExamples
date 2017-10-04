@@ -1,6 +1,8 @@
 /*
 This is a silly pokemon game developed by Joshua Clark to explain objects and functions 
 to students at Green River College in IT207 FALL 2017
+
+The goal is to choose the best pokemon to win!
 */
 
 
