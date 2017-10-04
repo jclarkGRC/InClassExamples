@@ -41,19 +41,19 @@ function Pokemon(name) {
             break;
 
         case 'Bulbasaur':
-            this.attackPower = 40;
+            this.attackPower = 50;
             this.healthPoints = 50;
             this.imageURL = "./img/pokemonGameImages/bulbasaur.png";
             break;
 
         case 'Squirtle':
-            this.attackPower = 30;
+            this.attackPower = 50;
             this.healthPoints = 50;
             this.imageURL = "./img/pokemonGameImages/squirtle.png";
             break;
 
         case 'Charmander':
-            this.attackPower = 20;
+            this.attackPower = 50;
             this.healthPoints = 50;
             this.imageURL = "./img/pokemonGameImages/charmander.png";
             break;
@@ -103,16 +103,24 @@ function startBattle() {
         //console.log(players);
     }
 
+    //Hide the start game button
+    document.getElementById("startGameButton").style.visibility="hidden";
+
     //call a function to update elements of the document with our new
     //new information from the user
-    displayPlayers(players)
+    displayPlayers(players);
+
+    //Show the fight game button
+    document.getElementById("fightButton").style.visibility="visible";
 
 }
 
-//displayPlayerOne
-function displayPlayerOne () {
-    //player fields
+//display players to document
+function displayPlayers(players) {
+
+    //pull each player out of the players array
     var playerOne = players[0];
+    var playerTwo = players[1];
 
     //Display player one's name
     document.getElementById("player1").innerHTML +=
@@ -121,11 +129,6 @@ function displayPlayerOne () {
         playerOne.pokemon.name +
         brTag +
         "<img src=" + playerOne.pokemon.imageURL + ">";
-}
-
-//displayPlayerTwo
-function displayPlayerTwo () {
-    var playerTwo = players[1];
 
     //Display player two
     document.getElementById("player2").innerHTML +=
@@ -134,29 +137,8 @@ function displayPlayerTwo () {
         playerTwo.pokemon.name +
         brTag +
         "<img src=" + playerTwo.pokemon.imageURL + ">";
-}
-
-//display players to document
-function displayPlayers(players) {
-    console.log("The players array is: ");
-    console.log(players);
-
-    //Hide the start game button
-    document.getElementById("startGameButton").style.visibility="hidden";
 
 
-    //call function that updates the document with player one's information
-    displayPlayerOne();
-
-    //Display the versus text
-    document.getElementById("versus").innerHTML = "versus";
-
-    //call similar function for player two... we could write one function that handles both players
-    //if we passed each player as a parameter
-    displayPlayerTwo();
-
-    //Show the fight game button
-    document.getElementById("fightButton").style.visibility="visible";
 }
 
 //function to create player object based on user input
