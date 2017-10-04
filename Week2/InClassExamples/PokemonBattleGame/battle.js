@@ -3,6 +3,8 @@ This is a silly pokemon game developed by Joshua Clark to explain objects and fu
 to students at Green River College in IT207 FALL 2017
 
 The goal is to choose the best pokemon to win!
+
+This page handles the battle sequence.
 */
 
 
@@ -23,7 +25,7 @@ function Player(playerName, pokemon) {
     this.playerName = playerName;
     this.pokemon = pokemon; //assign this after the player chooses a pokemon
     this.numberOfWins = 0;
-    this.score = calculateScore(this.numberOfWins);
+    this.score = 0;
     this.winner = false;
 }
 
@@ -35,13 +37,13 @@ function Pokemon(name) {
     //create pokemon object based on name with expressions
     switch (name) {
         case 'Pikachu':
-            this.attackPower = 50;
+            this.attackPower = 100;
             this.healthPoints = 50;
             this.imageURL = "./img/pokemonGameImages/pikachu.png";
             break;
 
         case 'Bulbasaur':
-            this.attackPower = 50;
+            this.attackPower = 75;
             this.healthPoints = 50;
             this.imageURL = "./img/pokemonGameImages/bulbasaur.png";
             break;
@@ -53,7 +55,7 @@ function Pokemon(name) {
             break;
 
         case 'Charmander':
-            this.attackPower = 50;
+            this.attackPower = 25;
             this.healthPoints = 50;
             this.imageURL = "./img/pokemonGameImages/charmander.png";
             break;
@@ -166,9 +168,10 @@ function createPlayer() {
     return player;
 }
 
-//function to calculate the players score
-function calculateScore(numberOfWins) {
-
-    //To evaluate users score multiply their number of wins times 5
-    return numberOfWins * 5;
+//function to save player stats after battle into local storage
+function savePlayerData () {
+    //Store player data to local storage, so we can grab it for the scores page
+    localStorage.setItem("players", JSON.stringify(players));
+    alert("Player data was saved to local storage");
 }
+
