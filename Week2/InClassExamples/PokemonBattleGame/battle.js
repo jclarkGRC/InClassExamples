@@ -144,6 +144,7 @@ function displayPlayers(players) {
     //Hide the start game button
     document.getElementById("startGameButton").style.visibility="hidden";
 
+
     //call function that updates the document with player one's information
     displayPlayerOne();
 
@@ -154,6 +155,8 @@ function displayPlayers(players) {
     //if we passed each player as a parameter
     displayPlayerTwo();
 
+    //Show the fight game button
+    document.getElementById("fightButton").style.visibility="visible";
 }
 
 //function to create player object based on user input
