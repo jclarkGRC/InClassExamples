@@ -9,61 +9,45 @@ Functions or Methods, Object, and how they work.
 *********
 */
 
-function changeVariableString (myVariable) {
 
-	myVariable = "Your variable has been changed to: ";
-	var strings = ["'Silly Goose'", "'Hello Kitty'", "'Pikachu FTW'"];
-	var stringChoice = 0;
+//This is a function that changes a variable
+function changeVariableString () {
+	var myVariable = "Your your animal has been change to: ";
+	var randomAnimals =["Cat", "Mouse", "Dog"];
 
-	for(i = 0; i < strings.length; i++) {
-		document.write(myVariable + strings[i]);
+	for(var i = 0; i < randomAnimals.length; i++) {
+		document.write(myVariable + randomAnimals[i]);
 		document.write("<br>");
 	}
 
 	return myVariable;
 }
 
-//call the function
-var myVariable = changeVariableString("example String");
-
-
+//call the function here
+changeVariableString();
 
 
 //fields or variables
 var counter = 1;
 var newCount;
-
 var numberOfClicks = 0;
-var myVariable = "Your variable has been changed to: ";
-var strings = ["'Silly Goose'", "'Hello Kitty'", "'Pikachu FTW'"];
+var myVariable ="Your variable has been changed to: ";
+var animals = ["Cat", "Mouse", "Dog"];
 
-//method or function
-function countUp() {
-    newCount = counter++;
-    document.getElementById("clicks").innerHTML = newCount;
-}
+//write a function for the button's on click event
+function clickButton() {
+	//console.log("The button was clicked");
 
-//write function for the button's on click event
-function clickButton () {
-	console.log("button was clicked");
-	
-	//check the number of clicks
-	if(numberOfClicks < strings.length - 1){
-	numberOfClicks++;
+	//check for the number of clicks
+	if(numberOfClicks < animals.length - 1) {
+		numberOfClicks++;
 	}
 	else{
 		numberOfClicks = 0;
 	}
 
 	console.log(numberOfClicks);
-
-	//how to append an html document with new text
-	//document.getElementById("parentID").innerHTML+= "new content"
-	//document.getElementById("buttonText").innerHTML = myVariable;
-	document.getElementById("clicks").innerHTML = myVariable + strings[numberOfClicks];
-
-	console.log(myVariable);
-	
+	//append the html document with new text
+	document.getElementById("clicks").innerHTML = myVariable + animals[numberOfClicks];
 
 }
-
