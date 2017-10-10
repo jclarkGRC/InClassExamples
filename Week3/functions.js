@@ -1,223 +1,176 @@
-//how do we declare and invoke functions?
-function calculateDogYears()
-{
-    var dogYears = parseFloat(prompt("Enter your dog's age!"));
-    
-    //rules: for the first 3 years, 10 dy = 1 hy
-    //       for the next years, 7 dy = 1 hy
-    
-    var humanYears = 0;
-    if (dogYears <= 3)
-    {
-        humanYears = dogYears * 10;
+/*
+Joshua Clark
+Working with functions
+10/9/2017
+ */
+
+console.log("This is working!");
+
+//declaring and invoking functions
+
+// function calculateDogYears () {
+//     var dogYears = parseInt(prompt("Enter your dog's age."));
+//
+//     //first three years: 1 dog year == 10 human years
+//     //afterwards: 1 dog year == 7 human years
+//
+//     var humanYears = 0;
+//
+//     if(dogYears <= 3) {
+//         humanYears = dogYears * 10;
+//     }else{
+//         //we know we have at least 3 dog years
+//         humanYears = 30;
+//         dogYears-= 3;
+//
+//         humanYears += (dogYears * 7);
+//     }
+//
+//     document.write("The dog is : " + humanYears + " years old");
+// }
+//
+// calculateDogYears();
+
+//return types
+
+// function tripCalculator(minMph, maxMph, distance){
+//     //return the number of hours you need to travel until
+//     //you reach your destination, based on the average MPH
+//
+//     var average =(maxMph + minMph)/2;
+//
+//     return distance / average; //calculate the amount of hours
+// }
+//
+// var hours = tripCalculator(30, 60, 100);
+// document.write("Your trip will take " + hours.toFixed(1) + "Hours!");
+
+//parameters
+//
+// function convertCurrency (dollars, currencyType){
+//     if(currencyType === "euro"){
+//         return dollars * 0.94;
+//     }
+//     else if (currencyType === "pound"){
+//         return dollars * 0.80;
+//     }
+//     else if (currencyType === "peso"){
+//         return dollars * 18.52;
+//     }
+//     else {
+//         return -1;
+//     }
+// }
+//
+// var dollars = 3.50;
+// var euros = convertCurrency(dollars,"euro");
+// var pounds = convertCurrency(dollars,"pound");
+// var pesos = convertCurrency(dollars,"peso");
+//
+// document.write("$3.50 == €" + euros );
+
+//functions can be stored as variables
+
+//sort 3 numbers
+
+// var less = function (first, second) {
+//     return first < second;
+// }
+//
+// var greater = function (first, second) {
+//     return first > second;
+// }
+//
+// //sorts an array of numbers in either ascending or descending order
+// function sort(elements, compare) {
+//     var first = elements[0];
+//     var second = elements[1];
+//     var third = elements[2];
+//
+//
+//     //swap first two numbers if true
+//     if(compare(first, second)){
+//         var temp = first;
+//         first = second;
+//         second = temp;
+//     }
+//
+//     //swap second and third number if true
+//     if(compare(second, third)){
+//         var temp = second;
+//         var second = third;
+//         var third = temp;
+//     }
+//
+//     if(compare(first, second)){
+//         var temp = first;
+//         first = second;
+//         second = temp;
+//     }
+//
+//     return [first, second, third];
+// }
+//
+// //sort descending
+// var results = sort([30, 10, 20], less);
+// document.write(results + "<br>");
+//
+// //sort ascending
+// results = sort([30,10,20], greater);
+// document.write(results);
+
+//function decomposition
+
+birthDate();
+
+function birthDate() {
+
+    var bday = getParts();
+
+    if(validateMonth(bday[0]) && validateDay(bday[1]) && validateYear(bday[2])){
+        printSuccess(bday[0], bday[1], bday[2]);
     }
-    else
-    {
-        //the dog is at least 3 years old
-        humanYears = 30;
-        dogYears -= 3;
-        
-        humanYears += (dogYears * 7);
-    }
-    
-    document.write("Your dog is " + humanYears + " old in human years!<br>");
-}
-
-//invoke the function
-//calculateDogYears();
-
-//how do we return values from functions?
-
-//return the number of hours it will take to achieve the given distance,
-//given the average of the mph given
-function tripCalculator(minMph, maxMph, distance)
-{
-    var averageMph = (minMph + maxMph) / 2;
-    
-    return distance / averageMph;
-}
-
-//how many hours to cover 100 miles?
-var hours = tripCalculator(10, 30, 100);
-document.write("Your trip will take " + hours + " hours on average!<br>");
-
-//how do we send parameters to a function?
-function convertCurrency(dollars, currencyType)
-{
-    if (currencyType == "pound")
-    {
-        return dollars * 0.78;
-    }
-    else if (currencyType == "euro")
-    {
-        return dollars * 0.92;
-    }
-    else if (currencyType == "yen")
-    {
-        return dollars * 108.49;
-    }
-    else
-    {
-        var conversion = parseFloat(prompt("Enter the number of " + currencyType +
-                                           " to the dollar."));
-        
-        return dollars * conversion;
-    }
-}
-
-var dollars = 3.50;
-var pounds = convertCurrency(dollars, "pound");
-var euro = convertCurrency(dollars, "euro");
-var yen = convertCurrency(dollars, "yen");
-//var peso = convertCurrency(dollars, "peso");
-
-//document.write("Your $" + dollars + " is " + pounds + " pounds, " +
-//               euro + " euros, " + yen + " yen, " + peso + " pesos.<br>");
-
-//storing functions in variables
-var lessThan = function(first, second) {
-    document.write("lessThan() invoked");
-    return first < second;  
-};
-
-var greaterThan = function(first, second) {
-    return first > second;
-};
-
-var less = lessThan(10, 20);
-document.write(less + "<br>");
-
-var greater = greaterThan(10, 20);
-document.write(greater + "<br>");
-
-function sort(elements, compareFunction)
-{
-    //assume we have exactly three elements
-    var first = elements[0];
-    var second = elements[1];
-    var third = elements[2];
-    
-    if(compareFunction(first, second) == false)
-    {
-        temp = 10;
-        
-        //swap first & second
-        var temp = first;
-        first = second;
-        second = temp;
-    }
-    
-    if (compareFunction(second, third) == false)
-    {
-        temp = second;
-        second = third;
-        third = temp;
-    }
-    
-    if(compareFunction(first, second) == false)
-    {
-        //swap first & second
-        temp = first;
-        first = second;
-        second = temp;
-    }
-    
-    return [first, second, third];
-}
-
-var sortedResults = sort( [20, 7, 3], greaterThan);
-document.write("Sorted: " + sortedResults + "<br>");
-
-//functional decomposition
-
-//birthDate();
-
-//ask the user for their birthdate, verify the date, then print a response
-function birthDate()
-{
-    //retrieve the birthdate
-    var parts = getBirthDate();
-    
-    //validate
-    if (validateDay(parts[0]) && validateMonth(parts[1]) &&
-        validateYear(parts[2]))
-    {
-        //valid date!
-        document.write("Your birthday is " + parts[1] + "/" + parts[0] +
-                       "/" + parts[2] + ". Your are " + (2017 - parts[2]) +
-                       " years old!<br>");
-    }
-    else
-    {
-        //invalid date!
-        document.write("You entered an invalid birthdate!");
+    else{
+        printFailure();
     }
 }
 
-//this will return an array - [day, month, year]
-function getBirthDate()
-{
-    var month = parseInt(prompt("Enter a birth month"));
-    var day = parseInt(prompt("Enter a birth day"));
-    var year = parseInt(prompt("Enter a birth year"));
-    
-    return [day, month, year];
+//gets the different elements of the birth date from user
+function getParts(){
+
+    var month = parseInt(prompt("Month?"));
+    var day = parseInt(prompt("Day?"));
+    var year = parseInt(prompt("Year?"));
+
+    return [month, day, year];
 }
 
-function validateDay(day)
-{
-    //add some rudimentary checks
-    return day >= 1 && day <= 31;
-}
-
-function validateMonth(month)
-{
-    //add some rudimentary checks
+function validateMonth(month){
     return month >= 1 && month <= 12;
 }
 
-function validateYear(year)
-{
-    //add some rudimentary checks
-    return year >= 1900;
+function validateDay(day){
+    return day >= 1 && day <= 31;
 }
 
-//scope
-var weather = "rainy"; //global variable
+function validateYear(year){
+    return year >= 1900 && year < 2018;
+}
 
-checkTheWeather();
+function printSuccess(day, month, year){
+    document.write("<p><strong>Success!</strong> Your birthday was entered correctly</p>");
+    document.write("<br>");
+    document.write("<p>Birthdate: " + day + "/" + month + "/" + year + "</p>");
+    document.write("You were born "+ (2017 - year) + " years ago! ")
+}
 
-function checkTheWeather()
-{
-    if (true)
-    {
-        var citizenOf = "washington"; //local variable
-    }
-    weather = "sunny";
-    
-    //document.write(citizenOf);
+//write to the document that the user failed the bday test
+function printFailure(){
+   document.write("<p><strong>Error! Your birthday is formatted incorrectly!</strong></p>");
 }
 
 
-//invoking anonymous functions
-(function() {
-    document.write("Calling an anonymous function.");
-})();
+//variable scope
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//math functions
