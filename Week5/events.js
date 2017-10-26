@@ -125,13 +125,6 @@ function updatePhone() {
     phone.value = text;
 }
 
-
-
-
-
-
-
-
 function textGainFocus(){
     this.value = "";
 }
@@ -141,6 +134,51 @@ function textLoseFocus(){
         alert("Please enter a valid name with at least 5 characters");
     }
 }
+
+//event bubbling!!!
+window.addEventListener('load', function () {
+    var space = document.getElementById("space");
+    var colorChanger = document.getElementById("color-changer");
+
+    space.onclick = resetColor;
+    colorChanger.onclick = randomizeColor;
+});
+
+function randomizeColor() {
+    //This line of code will stop event propagation
+    event.stopPropagation();
+
+    var space = document.getElementById("space");
+    space.style.backgroundColor = "rgb(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")"
+}
+
+function resetColor() {
+    var space = document.getElementById("space");
+    space.style.backgroundColor = "white";
+}
+
+function getRandomColor(){
+    return Math.floor(Math.random() * 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
