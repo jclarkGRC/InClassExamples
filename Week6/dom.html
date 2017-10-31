@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Working with the DOM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<h1 id="page_header">Lorem Ipsum</h1>
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <span class="quote">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</span>
+    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum.
+</p>
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    <span class="quote">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</span>
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum.
+</p>
+
+<hr>
+
+<aside>
+    <h4 id="figures">Favorite Historical Figures</h4>
+    <ol class="list">
+        <li class="every">Donald Trump</li>
+        <li class="other">Hillary Clinton</li>
+        <li class="every">Barrack Obama</li>
+        <li class="other">William Wallace</li>
+        <li class="every">Bill Pullman</li>
+        <li class="other">Martin Sheen</li>
+    </ol>
+</aside>
+
+<hr>
+<button onclick="addRecord()">Add Records</button>
+<table id="contact_table">
+    <thead>
+    <tr><td>Contact Name</td><td>Email</td><td>Phone #</td></tr>
+    </thead>
+    <tbody>
+        <tr><td>Joshua Clark</td><td>joshua@email.com</td><td>555-5555</td></tr>
+        <tr><td>Kermit the Frog</td><td>theFrog@email.com</td><td>555-4444</td></tr>
+        <tr><td>Jimmy Stewart</td><td>jimmy@email.com</td><td>555-5555</td></tr>
+    </tbody>
+</table>
+
+<!--load the script after the page is loaded-->
+<script src="dom.js"></script>
+</body>
+
+</html>
