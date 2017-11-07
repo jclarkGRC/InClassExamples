@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PP Store</title>
+	<link rel="stylesheet" type="text/css" href="store.css">
+</head>
+
+<body>
+	<div>
+		<h1>Welcome to my Store</h1>
+		<h3>We like to sell stuffed animals </h3>
+		<div id="itemsInCart">Total Items in cart: <div id="totalItems"></div><br><div id="cartLink"><a href="cart.html">View Cart!</a></div></div>
+	</div>
+
+	<hr>
+	
+	<div>
+		<div class="items" id = "item1">
+			<img src = "./img/animal1.jpg">
+			<p>Grey Puff Friend</p>
+			<p>$14.99</p>
+			<button onclick="buyStuff()">Buy</button>
+		</div>
+
+		<div class="items" id = "item2">
+			<img src = "./img/animal2.jpg">
+			<p>Cute bear</p>
+			<p>$12.99</p>
+			<button onclick="buyStuff()">Buy</button>
+		</div>
+
+		<div class="items" id = "item3">
+			<img src = "./img/animal3.jpg">
+			<p>Fuzzy Yellow Ducky</p>
+			<p>$9.99</p>
+			<button onclick="buyStuff()">Buy</button>
+		</div>
+	</div>
+
+	<script src="store.js"></script>
+</body>
+
+</html>

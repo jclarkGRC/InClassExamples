@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="299ba099-68e0-4ebf-b333-01b40c70d61f" name="GreenRiverTech" url="http://jclark.greenrivertech.net/">
+        <fileTransfer host="jclark.greenrivertech.net" port="2222" rootFolder="/home/jclark" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="2222" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

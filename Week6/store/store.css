@@ -1,0 +1,31 @@
+h3 {
+	text-align: center;
+}
+
+h1{
+	text-align: center;
+}
+
+div.items{
+	margin: 0 auto;
+	width: 300px;
+	padding: 5px;
+}
+
+div.items:hover{
+	margin: -5px auto;
+}
+
+div#itemsInCart{
+	float: right;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+div#totalItems{
+	float:right;
+}
+
+div#cartLink{
+	margin: 0 auto;
+}
