@@ -145,7 +145,7 @@ window.addEventListener('load', function () {
 });
 
 function randomizeColor() {
-    //This line of code will stop event propagation
+    //This line of code will stop esvent propagation
     event.stopPropagation();
 
     var space = document.getElementById("space");
